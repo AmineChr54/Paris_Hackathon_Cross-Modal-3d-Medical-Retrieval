@@ -1,0 +1,66 @@
+{
+  "cli_version": "0.7.7",
+  "checkpoint_id": "e971dbca8f0c",
+  "session_id": "656594ea-fb21-4d60-abed-13db76fa45bb",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-27T17:46:48.7419139Z",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "save_step_count": 3,
+  "files_touched": [
+    ".gitignore",
+    "CLAUDE_workflow.md",
+    "docs/Q&A.md",
+    "docs/baseline.md",
+    "docs/challenge.md",
+    "docs/desc.md",
+    "docs/setup.md",
+    "docs/strategy.md",
+    "run_baseline.sh",
+    "tools/jupyter_put.py"
+  ],
+  "agent": "Claude Code",
+  "model": "",
+  "turn_id": "6df75767437b",
+  "token_usage": {
+    "input_tokens": 24637,
+    "cache_creation_tokens": 439983,
+    "cache_read_tokens": 6600012,
+    "output_tokens": 107082,
+    "api_call_count": 66
+  },
+  "session_metrics": {
+    "turn_count": 10
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-27T17:46:48.6841467Z",
+    "agent_lines": 131,
+    "agent_removed": 248,
+    "human_added": 788,
+    "human_modified": 19,
+    "human_removed": 0,
+    "total_committed": 938,
+    "total_lines_changed": 1186,
+    "agent_percentage": 31.956155143338954,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 1,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 247,
+      "user_added_per_file": {
+        ".gitignore": 1
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1,
+      "agent_lines_removed": 247
+    }
+  ]
+}

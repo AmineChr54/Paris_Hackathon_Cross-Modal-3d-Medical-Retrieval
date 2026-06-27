@@ -3,13 +3,14 @@
   "checkpoint_id": "e971dbca8f0c",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 6,
+  "checkpoints_count": 11,
   "files_touched": [
     ".gitignore",
     "CLAUDE_workflow.md",
     "docs/Q&A.md",
     "docs/baseline.md",
     "docs/challenge.md",
+    "docs/desc.md",
     "docs/setup.md",
     "docs/strategy.md",
     "eval_harness.py",
@@ -17,6 +18,7 @@
     "run_baseline.sh",
     "run_eval.ipynb",
     "tools/jupyter_fs.py",
+    "tools/jupyter_put.py",
     "tools/smoke_test.py",
     "tools/smoke_test_learned.py"
   ],
@@ -26,13 +28,19 @@
       "transcript": "/e9/71dbca8f0c/0/full.jsonl",
       "content_hash": "/e9/71dbca8f0c/0/content_hash.txt",
       "prompt": "/e9/71dbca8f0c/0/prompt.txt"
+    },
+    {
+      "metadata": "/e9/71dbca8f0c/1/metadata.json",
+      "transcript": "/e9/71dbca8f0c/1/full.jsonl",
+      "content_hash": "/e9/71dbca8f0c/1/content_hash.txt",
+      "prompt": "/e9/71dbca8f0c/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 22074,
-    "cache_creation_tokens": 180032,
-    "cache_read_tokens": 3933467,
-    "output_tokens": 69080,
-    "api_call_count": 47
+    "input_tokens": 46711,
+    "cache_creation_tokens": 620015,
+    "cache_read_tokens": 10533479,
+    "output_tokens": 176162,
+    "api_call_count": 113
   }
 }

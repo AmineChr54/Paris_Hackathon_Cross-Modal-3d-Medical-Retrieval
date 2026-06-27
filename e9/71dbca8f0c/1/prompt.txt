@@ -1,0 +1,101 @@
+hey bro i have got this AMD 
+AMD Provided 38 instances of GPU instances (powered by the MI300X GPU, with a whopping 192GB of vRAM). You could use to serve a powerful coding model with vllm and plug into your coding agent/agentic AI framework (Hermes/OpenClaw, etc) for your Hackathon needs. Or do image processing etc. 
+
+It's a near bare-metal system, with root access - meaning, you can install any package you need. 
+
+
+how do i use it ? and set it up,
+
+---
+
+I WANT A way to use these for this project read docs please @docs, and i want to run the @kaggle_baseline.py . but like its written to run for kaggle, but how do i use the amd instead?
+
+---
+
+is the thing that i have open on the browser SSH? can i like open it on vscode? or like can i givbe you toolks so that you can code there?
+
+---
+
+<task-notification>
+<task-id>b2wwb5vg3</task-id>
+<tool-use-id>toolu_01Uf1uNDpFiGDtFbsyPoGgzG</tool-use-id>
+<output-file>C:\Users\amine\AppData\Local\Temp\claude\D--Projects-Hackathons-EHL-Hackathon-Cross-modal-Content-based-Retrieval-for-3D-Medical-Images\656594ea-fb21-4d60-abed-13db76fa45bb\tasks\b2wwb5vg3.output</output-file>
+<status>completed</status>
+<summary>Background command "Poll until SSH port 22 reopens" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+how do i setup the ssh myself actually, i can help you do that
+
+---
+
+C:\Users\amine>ssh amd
+Bad permissions. Try removing permissions for user: UNKNOWN\\UNKNOWN (S-1-5-21-4164113636-2183645680-36870625-1005) on file C:/Users/amine/.ssh/config.
+Bad owner or permissions on C:\\Users\\amine/.ssh/config
+
+---
+
+<task-notification>
+<task-id>baxfgo49g</task-id>
+<tool-use-id>toolu_018Z1Jx1Ei16AM6pBs92L3tS</tool-use-id>
+<output-file>C:\Users\amine\AppData\Local\Temp\claude\D--Projects-Hackathons-EHL-Hackathon-Cross-modal-Content-based-Retrieval-for-3D-Medical-Images\656594ea-fb21-4d60-abed-13db76fa45bb\tasks\baxfgo49g.output</output-file>
+<status>completed</status>
+<summary>Background command "Poll until SSH port 22 recovers" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+<task-notification>
+<task-id>b6e8m9v0m</task-id>
+<tool-use-id>REDACTED</tool-use-id>
+<status>stopped</status>
+<summary>No completion record was found for this background shell command from the previous session. It may have been stopped (via the UI, Monitor timeout, or agent teardown — these leave no transcript marker), or it may have been running when the previous Claude Code process exited. Check the output file for partial results before assuming it completed.</summary>
+</task-notification>
+
+---
+
+fuck ssh i willl code there myself and you write here
+but theres these problems:
+-root@864a199d1159:/app# cd /workspace/data && unzip -q ehl-paris-medical-image-retrieval.zip -d ehl     cd /workspace/data && unzip -q ehl-paris-medical-image-retrieval.zip -d ehl
+bash: unzip: command not found
+root@864a199d1159:/workspace/data# ls
+ehl-paris-medical-image-retrieval.zip
+-also i cant find the files actually in the explorer on the left
+
+---
+
+root@864a199d1159:~# find /workspace/data/ehl -name '*.nii*' | wc -l     # expect 1454
+find /workspace/data/ehl -name train_pairs.csv      # should show dataset1/train_pairs.csv
+1454
+/workspace/data/ehl/dataset1/train_pairs.csv
+root@864a199d1159:~# jupyter server list
+Currently running servers:
+http://0.0.0.0:8888/?REDACTED :: /shared-docker
+root@864a199d1159:~# ln -s /workspace /root/workspace
+root@864a199d1159:~#
+
+---
+
+root@864a199d1159:~# find /workspace/data/ehl -name '*.nii*' | wc -l     # expect 1454
+find /workspace/data/ehl -name train_pairs.csv      # should show dataset1/train_pairs.csv
+1454
+/workspace/data/ehl/dataset1/train_pairs.csv
+root@864a199d1159:~# jupyter server list
+Currently running servers:
+http://0.0.0.0:8888/?REDACTED :: /shared-docker
+root@864a199d1159:~# ln -s /workspace /root/workspace
+root@864a199d1159:~#
+
+
+SO CAN WE RUN IPYNB FILES TO TO TRAINING NOW ON THAT DATA?
+
+---
+
+so please write in a small mf file like CLAUDE_workflow.md
+its a simple cycle
+Caude codes for for the jupyter from amd
+it uploads it
+
+
+aand only if i want to submit, claude creates a version but for kaggle
