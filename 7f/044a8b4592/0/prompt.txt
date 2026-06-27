@@ -1,0 +1,29 @@
+hey bro i have got this AMD 
+AMD Provided 38 instances of GPU instances (powered by the MI300X GPU, with a whopping 192GB of vRAM). You could use to serve a powerful coding model with vllm and plug into your coding agent/agentic AI framework (Hermes/OpenClaw, etc) for your Hackathon needs. Or do image processing etc. 
+
+It's a near bare-metal system, with root access - meaning, you can install any package you need. 
+
+
+how do i use it ? and set it up,
+
+---
+
+I WANT A way to use these for this project read docs please @docs, and i want to run the @kaggle_baseline.py . but like its written to run for kaggle, but how do i use the amd instead?
+
+---
+
+is the thing that i have open on the browser SSH? can i like open it on vscode? or like can i givbe you toolks so that you can code there?
+
+---
+
+<task-notification>
+<task-id>b2wwb5vg3</task-id>
+<tool-use-id>toolu_01Uf1uNDpFiGDtFbsyPoGgzG</tool-use-id>
+<output-file>C:\Users\amine\AppData\Local\Temp\claude\D--Projects-Hackathons-EHL-Hackathon-Cross-modal-Content-based-Retrieval-for-3D-Medical-Images\656594ea-fb21-4d60-abed-13db76fa45bb\tasks\b2wwb5vg3.output</output-file>
+<status>completed</status>
+<summary>Background command "Poll until SSH port 22 reopens" completed (exit code 0)</summary>
+</task-notification>
+
+---
+
+how do i setup the ssh myself actually, i can help you do that

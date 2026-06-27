@@ -1,0 +1,35 @@
+{
+  "cli_version": "0.7.7",
+  "checkpoint_id": "7f044a8b4592",
+  "strategy": "manual-commit",
+  "branch": "master",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "Q&A.md",
+    "README.md",
+    "desc.md",
+    "docs/Q&A.md",
+    "docs/README.md",
+    "docs/desc.md",
+    "docs/presentation_TUM_AI.pdf",
+    "ehl-paris-2026-medical-retrieval-main/ehl-paris-2026-medical-retrieval-main/README.md",
+    "ehl-paris-2026-medical-retrieval-main/ehl-paris-2026-medical-retrieval-main/data_README.md",
+    "kaggle_baseline.py",
+    "presentation_TUM_AI.pdf"
+  ],
+  "sessions": [
+    {
+      "metadata": "/7f/044a8b4592/0/metadata.json",
+      "transcript": "/7f/044a8b4592/0/full.jsonl",
+      "content_hash": "/7f/044a8b4592/0/content_hash.txt",
+      "prompt": "/7f/044a8b4592/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 21285,
+    "cache_creation_tokens": 121857,
+    "cache_read_tokens": 2113134,
+    "output_tokens": 47972,
+    "api_call_count": 30
+  }
+}
