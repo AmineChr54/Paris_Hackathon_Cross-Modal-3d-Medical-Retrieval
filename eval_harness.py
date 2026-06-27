@@ -231,7 +231,12 @@ EMBEDDERS = {
 def mrr(query_vecs, gallery_vecs, true_idx):
     """Mean reciprocal rank. query/gallery: (N,D) arrays; true_idx[i]=correct gallery row."""
     sims = query_vecs @ gallery_vecs.T          # cosine (vectors are L2-normalised)
-    order = np.argsort(-sims, axis=1)
+    return mrr_from_scores(sims, true_idx)
+
+
+def mrr_from_scores(scores, true_idx):
+    """MRR from a precomputed (Nq,Ng) score matrix (higher = better). Used by pairwise rankers."""
+    order = np.argsort(-scores, axis=1)
     rr = []
     for i, t in enumerate(true_idx):
         rank = int(np.where(order[i] == t)[0][0]) + 1
@@ -253,7 +258,13 @@ def evaluate():
     # Optional trainable embedders: any module exposing build(pairs, index, grid, loader)
     # -> embed fn. Trained on the disjoint `train` split (no leakage), then scored like the
     # rest. Drop the module next to this file to enable it; absence is silently skipped.
-    for mod_name, key in [("learned_embedder", "learned")]:
+    # Set SKIP_LEARNED=1 for a fast classical-only pass (the GPU rankers below need no training).
+    plugins = []
+    if os.environ.get("SKIP_LEARNED", "0") != "1":
+        plugins.append(("learned_embedder", "learned"))
+    if os.environ.get("USE_MIND_LEARNED", "1") == "1":      # MIND-input contrastive (d2/d3 model)
+        plugins.append(("mind_embedder", "mind_learned"))
+    for mod_name, key in plugins:
         try:
             mod = __import__(mod_name)
             EMBEDDERS[key] = mod.build(train, index, GRID, cached_volume)
@@ -269,7 +280,20 @@ def evaluate():
         if (i + 1) % 10 == 0:
             print(f"  loaded {i + 1}/{len(val)} pairs  ({time.time() - t0:.0f}s)")
 
-    results = {}  # embedder -> {level -> mrr}
+    # Pairwise GPU rankers (NMI / MIND / gradient cosine) — see rankers.py. These score a
+    # query against a candidate jointly, so they can't be expressed as a single embedding;
+    # they run on the MI300X GPU. Absence (no torch) is silently skipped.
+    rankers = {}
+    try:
+        import rankers as rk
+        rankers = rk.get_rankers()
+        if rankers:
+            print(f"[rankers] {list(rankers)} on device={rk.pick_device()}")
+    except Exception as e:  # noqa: BLE001
+        print(f"[skip] pairwise rankers unavailable: {type(e).__name__}: {e}")
+
+    results = {}  # method -> {level -> mrr}
+    true_idx = np.arange(len(val))
     for level, sim in SIMULATORS.items():
         # apply the level's simulator independently to each side (fixed rng per level)
         lvl_rng = np.random.default_rng(SEED + hash(level) % 1000)
@@ -278,7 +302,12 @@ def evaluate():
         for name, emb in EMBEDDERS.items():
             qv = np.stack([emb(v) for v in q_sim])
             gv = np.stack([emb(v) for v in g_sim])
-            score = mrr(qv, gv, np.arange(len(val)))
+            score = mrr(qv, gv, true_idx)
+            results.setdefault(name, {})[level] = score
+            print(f"  [{level}] {name:12s} MRR={score:.3f}")
+        for name, fn in rankers.items():
+            scores = fn(q_sim, g_sim)
+            score = mrr_from_scores(scores, true_idx)
             results.setdefault(name, {})[level] = score
             print(f"  [{level}] {name:12s} MRR={score:.3f}")
 
