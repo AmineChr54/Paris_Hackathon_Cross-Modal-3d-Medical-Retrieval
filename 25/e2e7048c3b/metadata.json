@@ -1,0 +1,35 @@
+{
+  "cli_version": "0.7.7",
+  "checkpoint_id": "25e2e7048c3b",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 13,
+  "files_touched": [
+    "SOLUTION.md",
+    "make_submission_best.py",
+    "make_submission_content.py",
+    "make_submission_lookup.py",
+    "make_submission_positional.py",
+    "rankers.py",
+    "scratch_submission.csv",
+    "split_submission.py",
+    "submission_1.csv",
+    "submission_2.csv",
+    "submission_3.csv"
+  ],
+  "sessions": [
+    {
+      "metadata": "/25/e2e7048c3b/0/metadata.json",
+      "transcript": "/25/e2e7048c3b/0/full.jsonl",
+      "content_hash": "/25/e2e7048c3b/0/content_hash.txt",
+      "prompt": "/25/e2e7048c3b/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 23425,
+    "cache_creation_tokens": 1258853,
+    "cache_read_tokens": 41293712,
+    "output_tokens": 295101,
+    "api_call_count": 174
+  }
+}
