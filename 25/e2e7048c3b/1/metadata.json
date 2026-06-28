@@ -1,0 +1,123 @@
+{
+  "cli_version": "0.7.7",
+  "checkpoint_id": "25e2e7048c3b",
+  "session_id": "9b1e9233-3e51-4835-858b-86c0c1dedc2e",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-28T10:30:32.8484862Z",
+  "branch": "main",
+  "checkpoints_count": 3,
+  "save_step_count": 3,
+  "files_touched": [
+    "EHL_Paris_Cross-Modal_Retrieval_Pitch.pptx",
+    "PRESENTATION_SCRIPT.md",
+    "docs/ARCHITECTURE.md",
+    "make_submission_content.py",
+    "make_submission_lookup.py",
+    "rankers.py"
+  ],
+  "agent": "Claude Code",
+  "model": "",
+  "turn_id": "436aff596547",
+  "token_usage": {
+    "input_tokens": 16551,
+    "cache_creation_tokens": 121404,
+    "cache_read_tokens": 3414966,
+    "output_tokens": 54277,
+    "api_call_count": 38
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01GqxdfmBptGDveQaQaTvD5R",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:pptx"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "436aff596547",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 26,
+        "end": 27,
+        "entry_ids": [
+          "ca891db9-91bd-468c-baa6-ed01047c1ef9"
+        ],
+        "tool_use_id": "toolu_01GqxdfmBptGDveQaQaTvD5R"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01GqxdfmBptGDveQaQaTvD5R"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:pptx",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 3
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-28T10:30:32.6338234Z",
+    "agent_lines": 119,
+    "agent_removed": 0,
+    "human_added": 2185,
+    "human_modified": 257,
+    "human_removed": 0,
+    "total_committed": 2511,
+    "total_lines_changed": 4372,
+    "agent_percentage": 2.7218664226898444,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 1035,
+      "user_lines_removed": 23,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "SOLUTION.md": 55,
+        "make_submission_best.py": 102,
+        "make_submission_content.py": 7,
+        "make_submission_lookup.py": 50,
+        "make_submission_positional.py": 47,
+        "rankers.py": 63,
+        "split_submission.py": 42,
+        "submission_1.csv": 141,
+        "submission_2.csv": 141,
+        "submission_3.csv": 98,
+        "tools/exp_d2_register.py": 122,
+        "tools/exp_dense2.py": 104,
+        "tools/leak_probe.py": 63
+      },
+      "user_removed_per_file": {
+        "make_submission_content.py": 1,
+        "make_submission_lookup.py": 17,
+        "rankers.py": 5
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1035,
+      "agent_lines_removed": 23
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 272,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1361,
+      "agent_lines_removed": 23,
+      "user_added_per_file": {
+        "docs/YACINE_ANALYSIS.md": 272
+      }
+    }
+  ]
+}
